@@ -105,7 +105,7 @@ namespace bp_hook
 			//not entirely sure, but this is just an example
 			bp.addr_single_step = reinterpret_cast<uint8_t*>(addr) + sizeof(uint8_t);
 			bp.type_info = bp_type;
-			memcpy(bp.orig_byte, addr, 2);
+			memcpy(bp.orig_byte, addr, copy_size);
 			bp.rip_fixer = cg_util::get_rip_fixer(addr, copy_size);
 			  
 			if (bp.rip_fixer)
